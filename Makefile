@@ -7,9 +7,11 @@ format:
 	@echo "Checking code formats"
 	black *.py lib_fapi/*.py
 lint:
-    #flake8 or pylint
+	@echo "Startin Pylint checks"
+	pylint --disable=R,C *.py lib_fapi/*.py
 test:
-    #test
+	@echo "Start running Unit Tests"
+	python -m pytest -vv --cov=lib_fapi test_logic.py
 deploy:
     #deploy
 all: install lint test deploy
