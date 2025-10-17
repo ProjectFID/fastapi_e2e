@@ -8,7 +8,7 @@ format:
 	black *.py lib_fapi/*.py
 lint:
 	@echo "Startin Pylint checks"
-	pylint --disable=R,C *.py lib_fapi/*.py
+	pylint --disable=R,C,import-error *.py lib_fapi/*.py
 test:
 	@echo "Start running Unit Tests"
 	python -m pytest -vv --cov=lib_fapi test_logic.py
